@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Odysee Chat Message</title>
+        <link rel="stylesheet" href="sdpi.css">
+        <script src="common.js"></script>
+        <script>            
+            if($SD) {
+                $SD.on("connected", function (jsonObj) {
+                    console.log(`[connected] ${JSON.stringify(jsonObj)}`);
+                    if(jsonObj.hasOwnProperty('actionInfo')) {
+                        settings = Utils.getProp(jsonObj, 'actionInfo.payload.settings', {});
+                        document.getElementById("comment").value = settings.comment || "";
+                        document.getElementById("stream_claim_id").value = settings.stream_claim_id || "";
+                        document.getElementById("user_claim_id").value = settings.user_claim_id || "";
+                        document.getElementById("api_key").value = settings.api_key || "";
+                    }
+                });
+            };
+            const save = function() {
+                if($SD) {
+                    var payload = {};
+                    [].forEach.call(document.querySelectorAll(".inspector"), element => {
+                        payload[element.id] = element.value;
+                    });
+                    $SD.api.sendToPlugin($SD.uuid, $SD.actionInfo["action"], payload);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="sdpi-wrapper">
+            <div class="sdpi-item">
+                <div class="sdpi-item-label">Api Key</div>
+                <span class="sdpi-item-value textarea">
+                    <input class="inspector sdpi-item-value" id="api_key" value="" type="password">
+                </span>
+            </div>
+            <div class="sdpi-item">
+                <div class="sdpi-item-label">User Claim ID</div>
+                <span class="sdpi-item-value textarea">
+                    <input class="inspector sdpi-item-value" id="user_claim_id" value="">
+                </span>
+            </div>
+            <div class="sdpi-item">
+                <div class="sdpi-item-label">Stream Claim ID</div>
+                <span class="sdpi-item-value textarea">
+                    <input class="inspector sdpi-item-value" id="stream_claim_id" value="">
+                </span>
+            </div>
+            <div class="sdpi-item">
+                <div class="sdpi-item-label">Message</div>
+                <span class="sdpi-item-value textarea">
+                    <textarea class="inspector" type="textarea" id="comment"></textarea>
+                </span>
+            </div>
+            <div class="sdpi-item">
+                <button class="sdpi-item-value" id="save" onclick="save()">Save</button>
+            </div>
+        </div>
+    </body>
+</html>

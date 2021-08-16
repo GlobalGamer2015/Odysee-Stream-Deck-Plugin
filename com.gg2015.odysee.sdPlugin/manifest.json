@@ -1,0 +1,42 @@
+{
+  "Actions": [
+      {
+          "Icon": "resources/post_message_white",
+          "Name": "Chat Message",
+          "States": [
+              {
+                  "Image": "resources/post_message",
+                  "TitleAlignment": "bottom",
+                  "FontSize": "10"
+              }
+          ],
+          "SupportedInMultiActions": true,
+          "Tooltip": "Send a Chat Message to your Stream Chat.",
+          "UUID": "com.gg2015.odysee.action"
+      }
+  ],
+  "SDKVersion": 2,
+  "Author": "GG2015",
+  "CodePath": "main.html",
+  "Description": "Plugin that uses Odysee-Chatter services.",
+  "Name": "Unofficial Odysee",
+  "Icon": "resources/pluginIcon",
+  "Category": "Odysee",
+  "CategoryIcon": "resources/pluginCategory",
+  "URL": "https://www.odysee-chatter.com",
+  "PropertyInspectorPath": "propertyinspector.html",
+  "Version": "1.0",
+  "OS": [
+      {
+          "Platform": "mac",
+          "MinimumVersion": "10.11"
+      },
+      {
+          "Platform": "windows",
+          "MinimumVersion": "10"
+      }
+  ],
+  "Software": {
+      "MinimumVersion" : "4.1"
+  }
+}
