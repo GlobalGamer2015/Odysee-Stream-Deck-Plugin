@@ -18,14 +18,14 @@
   "SDKVersion": 2,
   "Author": "GG2015",
   "CodePath": "main.html",
-  "Description": "Plugin that uses Odysee-Chatter services.",
+  "Description": "Plugin that was made for Odysee streaming that uses Odysee-Chatter services.",
   "Name": "Unofficial Odysee",
   "Icon": "resources/pluginIcon",
   "Category": "Odysee",
   "CategoryIcon": "resources/pluginCategory",
   "URL": "https://www.odysee-chatter.com",
   "PropertyInspectorPath": "propertyinspector.html",
-  "Version": "1.0",
+  "Version": "1.1",
   "OS": [
       {
           "Platform": "mac",
