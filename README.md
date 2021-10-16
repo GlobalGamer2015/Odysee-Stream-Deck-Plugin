@@ -1,3 +1,5 @@
+As of 10/14/21. This is currently not working.
+
 # Odysee-Stream-Deck-Plugin
 Unofficial Stream Deck plugin made for Odysee that uses Odysee-Chatter services.
 
